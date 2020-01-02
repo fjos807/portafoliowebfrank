@@ -1,0 +1,35 @@
+{
+    "dataAll":
+    [
+    {
+        "collection": "investigaciones",
+        "data":
+        [
+            {"name": "Investigacion 1", "route": "pages/investigaciones/inv1.html", "description": "hola"},
+            {"name": "Investigacion 2", "route": "pages/investigaciones/inv2.html", "description": "hola"},
+            {"name": "Investigacion 2", "route": "pages/investigaciones/inv2.html", "description": "hola"},
+            {"name": "Investigacion 2", "route": "pages/investigaciones/inv2.html", "description": "hola"},
+            {"name": "Investigacion 2", "route": "pages/investigaciones/inv2.html", "description": "hola"}
+        ]
+    },
+    {
+        "collection": "laboratorios",
+        "data":
+        [
+            {"name": "LAb 1", "route": "pages/laboratorios/lab1.html", "description": "hola"},
+            {"name": "LAb 2", "route": "pages/laboratorios/lab2.html", "description": "hola"},
+            {"name": "LAb 3", "route": "pages/laboratorios/lab3.html", "description": "hola"}
+        ]
+    },
+    {
+        "collection": "proyectos",
+        "data":
+        []
+    },
+    {
+        "collection": "tareas",
+        "data":
+        []
+    }
+]
+}
