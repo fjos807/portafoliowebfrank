@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <title>Portafolio WEB Frank</title>
   
@@ -25,13 +25,13 @@
                                 <a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Sobre mi</a>
+                                <a class="nav-link" href="#inv_divider">Sobre mi</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Sobre el curso</a>
+                                <a class="nav-link" href="#curse_divider">Sobre el curso</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Asignaciones</a>
+                                <a class="nav-link" href="#tabs_divider">Asignaciones</a>
                         </ul>
                     </div>
             </nav>
@@ -54,9 +54,7 @@
                 </div>
                 </div>
             <div class="row justify-content-center">
-                <button type="button" class="btn btn-secondary button_more mx-auto" onClick="document.getElementById('inv_divider').scrollIntoView({ 
-                  behavior: 'smooth' 
-                });">
+                <button type="button" class="btn btn-secondary button_more mx-auto" onClick="document.getElementById('inv_divider').scrollIntoView({behavior:'smooth'});">
                     <img src="/img/arrow-down.svg" alt="" width="32" height="32" title="Bootstrap">
                     CONOCER MÁS</button>
             </div>
@@ -84,7 +82,7 @@
         </div>
 
     </div>
-
+    <div id="curse_divider"></div>
     <div class="container-fluid course mx-0">
         <div class="row justify-content-center mx-0 mt-5 mb-5 pt-5 pb-4">
         <div class="card mb-3 mx-0 mt-5 mb-5" style="max-width: 55%;">
@@ -104,9 +102,10 @@
           </div>
           </div>
         </div>
+        <div id="tabs_divider"></div>
     <div class="containter-fluid mx-0">
-          <h3 class="text-center">Asignaciones</h3>
-            <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+          <h3 class="text-center mt-5 pt-3">Asignaciones</h3>
+            <ul class="nav nav-tabs nav-fill mt-3" id="myTab" role="tablist">
                     <li class="nav-item">
                       <a class="nav-link active" id="investigaciones-tab" data-toggle="tab" href="#investigaciones" role="tab" aria-controls="investigaciones" aria-selected="true">Investigaciones</a>
                     </li>
@@ -120,26 +119,26 @@
                         <a class="nav-link" id="tareas-tab" data-toggle="tab" href="#tareas" role="tab" aria-controls="tareas" aria-selected="false">Tareas</a>
                     </li>
                   </ul>
-                  <div class="tab-content mx-0 mt-3" id="myTabContent">
-                    <div class="tab-pane fade show active mx-0" id="investigaciones" role="tabpanel" aria-labelledby="investigaciones-tab">
+                  <div class="tab-content mx-0" id="myTabContent">
+                    <div class="tab-pane fade show active mx-0 pt-2" id="investigaciones" role="tabpanel" aria-labelledby="investigaciones-tab">
                       <div class="containter mx-0">
                         <div class="row row-cols-1 row-cols-md-3 mx-0" id="investigaciones_content">
                         </div>
                       </div>
                     </div>
-                    <div class="tab-pane fade mx-0" id="laboratorios" role="tabpanel" aria-labelledby="laboratorios-tab">
+                    <div class="tab-pane fade mx-0 pt-2" id="laboratorios" role="tabpanel" aria-labelledby="laboratorios-tab">
                       <div class="containter mx-0">
                         <div class="row row-cols-1 row-cols-md-3 mx-0" id="laboratorios_content">
                         </div>
                       </div>
                     </div>
-                    <div class="tab-pane fade mx-0" id="proyectos" role="tabpanel" aria-labelledby="proyectos-tab">
+                    <div class="tab-pane fade mx-0 pt-2" id="proyectos" role="tabpanel" aria-labelledby="proyectos-tab">
                         <div class="containter mx-0">
                             <div class="row row-cols-1 row-cols-md-3 mx-0" id="proyectos_content">
                             </div>
                           </div>
                     </div>
-                    <div class="tab-pane fade mx-0" id="tareas" role="tabpanel" aria-labelledby="tareas-tab">
+                    <div class="tab-pane fade mx-0 pt-2" id="tareas" role="tabpanel" aria-labelledby="tareas-tab">
                         <div class="containter mx-0">
                             <div class="row row-cols-1 row-cols-md-3 mx-0" id="tareas_content">
                             </div>

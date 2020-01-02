@@ -51,5 +51,9 @@ html, body {
 }
 
 .course {
-    background-color: blanchedalmond;
+    background-color: #272727;
+}
+
+#tareas {
+    background-color: blueviolet;
 }

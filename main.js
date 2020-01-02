@@ -50,7 +50,7 @@ function loadAllAssignments(){
             arrayAssignments[a].name + "> <div class=\"card-body\"> <h5 class=\"card-title\">" + 
             arrayAssignments[a].name + "</h5> <p class=\"card-text\"> " +
             arrayAssignments[a].description + "</p>" +
-            "<a class=\"btn btn-outline-primary\" href=" + arrayAssignments[a].route +
+            "<a class=\"btn btn-outline-info\" href=" + arrayAssignments[a].route +
             " \" role=\"button\">Ver más</a> </div> </div> </div>"
 
             if (elementOfArrayCollections.collection == "investigaciones"){
