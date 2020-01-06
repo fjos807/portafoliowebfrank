@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <title>Control de Usuarios</title>
+  </head>
+  <body onload="checkstatus();">
+    <div class="container-fluid mx-0 px-0">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark mx-0">
+        <a class="navbar-brand" href="#">Control de Usuarios</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"
+                >Inicio <span class="sr-only">(current)</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="card mt-5" style="width: 50%;">
+        <div class="card-body">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                id="inicio-tab"
+                data-toggle="tab"
+                href="#inicio"
+                role="tab"
+                aria-controls="inicio"
+                aria-selected="true"
+                >Inicio</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="registro-tab"
+                data-toggle="tab"
+                href="#registro"
+                role="tab"
+                aria-controls="registro"
+                aria-selected="false"
+                >Registro</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="recuperar-tab"
+                data-toggle="tab"
+                href="#recuperar"
+                role="tab"
+                aria-controls="recuperar"
+                aria-selected="false"
+                >Recuperar</a
+              >
+            </li>
+          </ul>
+
+          <div class="tab-content">
+            <div
+              class="tab-pane active"
+              id="inicio"
+              role="tabpanel"
+              aria-labelledby="inicio-tab"
+            >
+              <h2>Inicio de Sesión</h2>
+              <form class="needs-validation" action="php/login.php" method="POST" novalidate>
+                <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                    <label for="validationCustom01">ID</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="validationCustom01"
+                      name="id_login"
+                      value=""
+                      required
+                    />
+                    
+                    <div class="invalid-tooltip">
+                      Ingrese un ID válido
+                    </div> 
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                    <label for="validationCustom02">Contraseña</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="validationCustom02"
+                      name="password_login"
+                      value=""
+                      required
+                    />
+                    <div class="invalid-tooltip">
+                      Ingrese su contraseña.
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-primary" type="submit">
+                  Entrar
+                </button>
+              </form>
+
+              <script>
+                // Example starter JavaScript for disabling form submissions if there are invalid fields
+                (function() {
+                  "use strict";
+                  window.addEventListener(
+                    "load",
+                    function() {
+                      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                      var forms = document.getElementsByClassName(
+                        "needs-validation"
+                      );
+                      // Loop over them and prevent submission
+                      var validation = Array.prototype.filter.call(
+                        forms,
+                        function(form) {
+                          form.addEventListener(
+                            "submit",
+                            function(event) {
+                              if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                              }
+                              form.classList.add("was-validated");
+                            },
+                            false
+                          );
+                        }
+                      );
+                    },
+                    false
+                  );
+                })();
+              </script>
+              <a href="#" onclick="$('#registro-tab').tab('show')">¿No es usuario aún? Registrarse</a><br>
+              <a href="#" onclick="$('#recuperar-tab').tab('show')">Recuperar contraseña</a>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="registro"
+              role="tabpanel"
+              aria-labelledby="registro-tab"
+            >
+            <form class="needs-validation" action="php/signup.php" method="POST" novalidate>
+              <div class="form-row">
+                <div class="col-md-5 mb-3">
+                  <label for="validationCustom011">Nombre</label>
+                  <input type="text" class="form-control" id="validationCustom011" name="firstname" placeholder="María" required> 
+                  <div class="invalid-tooltip">
+                    Ingrese su nombre.
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom021">Primer apellido</label>
+                  <input type="text" class="form-control" id="validationCustom021" name="lastname1" placeholder="Murillo" required>
+                  <div class="invalid-tooltip">
+                    Ingrese su apellido.
+                  </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom03">Segundo apellido</label>
+                  <input type="text" class="form-control" id="validationCustom03" name="lastname2" placeholder="Murillo" required>
+                  <div class="invalid-tooltip">
+                    Ingrese su apellido.
+                  </div>
+                </div>
+              
+              </div>
+
+              <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustomUsername">Nombre de usuario</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroupPrepend">@</span>
+                    </div>
+                    <input type="text" class="form-control" id="validationCustomUsername" name="username" aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-tooltip">
+                      Ingrese un nombre de usuario.
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom04">Contraseña</label>
+                  <input type="password" class="form-control" id="validationCustom04" name="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$" required>
+                  <div class="invalid-tooltip">
+                    Ingrese una contraseña válida.
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom05">Email</label>
+                  <input type="email" class="form-control" id="validationCustom05" name="email" required>
+                  <div class="invalid-tooltip">
+                    Ingrese su email.
+                  </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom06">Teléfono móvil</label>
+                  <input type="text" class="form-control" id="validationCustom06" name="phone" placeholder="88888888" pattern="^[0-9]{8}$" required>
+                  <div class="invalid-tooltip">
+                    Ingrese su número de teléfono móvil.
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom051">Fecha de nacimiento</label>
+                  <input type="text" class="form-control" id="validationCustom051" name="birthdate" placeholder="dd/mm/aaaa" pattern="^[0-3]?[0-9].[0-3]?[0-9].(?:[0-9]{2})?[0-9]{2}$" required>
+                  <div class="invalid-tooltip">
+                    Ingrese su fecha de nacimiento.
+                  </div>
+                </div>
+              </div>
+              
+              <button class="btn btn-primary" type="submit">Registrar</button>
+            </form>
+            
+            <script>
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            (function() {
+              'use strict';
+              window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                  form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                      event.preventDefault();
+                      event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                  }, false);
+                });
+              }, false);
+            })();
+            </script>
+              <a href="#" onclick="$('#inicio-tab').tab('show')">¿Ya es usuario? Iniciar sesión</a>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="recuperar"
+              role="tabpanel"
+              aria-labelledby="recuperar-tab"
+            >
+              <h2>Recuperar contraseña</h2>
+              <h5>Ingrese su correo electrónico, donde se le enviará una contraseña temporal</h5>
+              <form class="needs-validation" action="index.html" novalidate>
+                <div class="form-row">
+                  <div class="col-md-4 mb-3">
+                    <label for="validationCustom010">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="validationCustom010"
+                      value=""
+                      required
+                    />
+                    
+                    <div class="invalid-tooltip">
+                      Ingrese un email válido
+                    </div> 
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    
+                  </div>
+                </div>
+                <button class="btn btn-primary" type="submit">
+                  Entrar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalFalse" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Error :(</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>El nombre de usuario ingresado ya existe, intente de nuevo con otro distinto.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalTrue" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Listo :)</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Su usuario ha sido registrado, ya puede iniciar sesión.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalPassword" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Intente de nuevo :(</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>La contraseña ingresada no es correcta.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalId" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Intente de nuevo :(</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>El nombre de usuario ingresado no existe.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript">
+      function checkstatus() {
+        var url = new URL(window.location.href);
+        var statusSignup = url.searchParams.get("signup");
+    
+        if(statusSignup != null){
+          if(statusSignup == 'false'){
+            $("#modalFalse").modal();
+          }
+          if(statusSignup == 'true'){
+            $("#modalTrue").modal();
+          }
+        }
+        var statusPassword = url.searchParams.get("password");
+        var statusId = url.searchParams.get("id");
+
+        if((statusPassword != null) && (statusPassword == 'false')){
+          $("#modalPassword").modal();
+        }
+        if((statusId != null) && (statusId == 'false')){
+          $("#modalId").modal();
+        }
+      }
+   </script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

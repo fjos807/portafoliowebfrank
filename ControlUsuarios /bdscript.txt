@@ -1,0 +1,11 @@
+CREATE TABLE `all_info` (
+  `id` varchar(30) NOT NULL,
+  `firstname` varchar(30) NOT NULL,
+  `lastname1` varchar(30) NOT NULL,
+  `lastname2` varchar(30) NOT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `phone` varchar(15) DEFAULT NULL,
+  `birth_date` varchar(30) DEFAULT NULL,
+  `password` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
